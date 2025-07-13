@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "nombre": "Inyección SQL",
+    "tipo": "Validación de entrada",
+    "nivelRiesgo": "Crítico",
+    "fechaDescubrimiento": "2025-06-15",
+    "descripcion": "Permite ejecutar comandos SQL maliciosos a través de campos no sanitizados.",
+    "soluciones": "Implementar consultas preparadas y validación estricta de entrada.",
+    "recomendacionesCortoPlazo": "Auditar formularios y bloquear patrones sospechosos.",
+    "estado": "Vigente"
+  },
+  {
+    "id": 2,
+    "nombre": "XSS persistente",
+    "tipo": "Cross-Site Scripting",
+    "nivelRiesgo": "Alto",
+    "fechaDescubrimiento": "2025-06-12",
+    "descripcion": "Permite inyectar scripts maliciosos que se almacenan en la base de datos.",
+    "soluciones": "Escapar caracteres HTML y utilizar políticas CSP.",
+    "recomendacionesCortoPlazo": "Revisar contenido generado por usuarios.",
+    "estado": "Vigente"
+  },
+  {
+    "id": 3,
+    "nombre": "Configuración por defecto en servidor",
+    "tipo": "Configuración insegura",
+    "nivelRiesgo": "Medio",
+    "fechaDescubrimiento": "2025-06-10",
+    "descripcion": "El servidor utiliza configuraciones de fábrica con credenciales conocidas.",
+    "soluciones": "Cambiar configuraciones por defecto y actualizar firmware.",
+    "recomendacionesCortoPlazo": "Deshabilitar servicios innecesarios.",
+    "estado": "Resuelta"
+  },
+  {
+    "id": 4,
+    "nombre": "Falsificación de petición en sitios cruzados (CSRF)",
+    "tipo": "Autenticación y sesión",
+    "nivelRiesgo": "Alto",
+    "fechaDescubrimiento": "2025-06-09",
+    "descripcion": "Permite enviar acciones no autorizadas en nombre del usuario autenticado.",
+    "soluciones": "Usar tokens CSRF y cabeceras de validación.",
+    "recomendacionesCortoPlazo": "Agregar protección en formularios sensibles.",
+    "estado": "Vigente"
+  },
+  {
+    "id": 5,
+    "nombre": "Exposición de datos sensibles",
+    "tipo": "Protección de información",
+    "nivelRiesgo": "Crítico",
+    "fechaDescubrimiento": "2025-06-07",
+    "descripcion": "Se encontraron archivos de configuración accesibles públicamente.",
+    "soluciones": "Reubicar archivos y restringir permisos.",
+    "recomendacionesCortoPlazo": "Configurar reglas del servidor para denegar acceso directo.",
+    "estado": "Vigente"
+  }
+]

@@ -1,0 +1,92 @@
+/* Tipografía y colores base */
+body {
+  background-color: #0f111a;
+  color: #e0e0e0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Títulos y secciones */
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  color: #00c3ff;
+  letter-spacing: 0.5px;
+}
+
+/* Tarjetas */
+.card {
+  background-color: #1c1f2e;
+  color: #e5e5e5;
+  border: 1px solid #2f354e;
+  transition: transform 0.15s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.01);
+  border-color: #00c3ff;
+}
+
+/* Botones */
+.btn-outline-primary {
+  color: #00c3ff;
+  border-color: #00c3ff;
+}
+.btn-outline-primary:hover {
+  background-color: #00c3ff;
+  color: #0f111a;
+}
+
+.btn-outline-secondary {
+  color: #8a8fa3;
+  border-color: #8a8fa3;
+}
+.btn-outline-secondary:hover {
+  background-color: #8a8fa3;
+  color: #0f111a;
+}
+
+.modal-content {
+  background-color: #1c1f2e;
+  color: #e0e0e0;
+}
+.modal-header {
+  border-bottom: 1px solid #2f354e;
+}
+.modal-footer {
+  border-top: 1px solid #2f354e;
+}
+
+select.form-select,
+input[type="date"] {
+  background-color: #1c1f2e;
+  color: #e0e0e0;
+  border: 1px solid #2f354e;
+}
+select.form-select:focus,
+input[type="date"]:focus {
+  border-color: #00c3ff;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 195, 255, 0.25);
+}
+
+.alert-info {
+  background-color: #0e2b3c;
+  border-color: #00c3ff;
+  color: #b8eafe;
+}
+
+.alert-secondary {
+  background-color: #22242f;
+  border-color: #444857;
+  color: #c2c2c2;
+}
+
+.btn-outline-light {
+  color: #ccc;
+  border-color: #555;
+}
+.btn-outline-light:hover {
+  background-color: #ccc;
+  color: #111;
+}
