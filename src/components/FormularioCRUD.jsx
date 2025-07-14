@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Evidencias from "./Evidencias"; // Asegúrate de ajustar la ruta según tu estructura
 
 function FormularioCRUD({ modo, inicial, onGuardar, onCancelar }) {
   const [formulario, setFormulario] = useState({
@@ -12,9 +13,14 @@ function FormularioCRUD({ modo, inicial, onGuardar, onCancelar }) {
     estado: "Vigente",
   });
 
+  const [evidencias, setEvidencias] = useState([]);
+
   useEffect(() => {
     if (inicial) {
       setFormulario(inicial);
+      if (inicial.evidencias) {
+        setEvidencias(inicial.evidencias);
+      }
     }
   }, [inicial]);
 
@@ -27,7 +33,13 @@ function FormularioCRUD({ modo, inicial, onGuardar, onCancelar }) {
     e.preventDefault();
     if (!formulario.nombre || !formulario.tipo || !formulario.nivelRiesgo)
       return;
-    onGuardar(formulario);
+
+    const datosCompletos = {
+      ...formulario,
+      evidencias,
+    };
+
+    onGuardar(datosCompletos);
   };
 
   return (
@@ -57,6 +69,7 @@ function FormularioCRUD({ modo, inicial, onGuardar, onCancelar }) {
           <form onSubmit={manejarSubmit}>
             <div className="modal-body">
               <div className="row g-3">
+                {/* Campos del formulario */}
                 <div className="col-md-6">
                   <label className="form-label">Nombre</label>
                   <input
@@ -150,7 +163,11 @@ function FormularioCRUD({ modo, inicial, onGuardar, onCancelar }) {
                   />
                 </div>
               </div>
+
+              {/* Aquí se agrega el componente de Evidencias */}
+              <Evidencias evidencias={evidencias} setEvidencias={setEvidencias} />
             </div>
+
             <div className="modal-footer">
               <button type="submit" className="btn btn-success">
                 {modo === "editar" ? "Guardar cambios" : "Crear"}

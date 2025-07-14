@@ -81,6 +81,7 @@ function ModalDetalle({
                 <Evidencias
                   evidencias={evidencias}
                   setEvidencias={(nuevas) => actualizarEvidencias(id, nuevas)}
+                  soloLectura={true}
                 />
               </>
             )}
@@ -97,3 +98,4 @@ function ModalDetalle({
 }
 
 export default ModalDetalle;
+
