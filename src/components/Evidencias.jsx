@@ -16,6 +16,7 @@ function Evidencias({ evidencias, setEvidencias, soloLectura = false }) {
       nombre: archivo.name,
       tipo: archivo.type,
       principal: evidencias.length === 0,
+      url: URL.createObjectURL(archivo),
     };
 
     setEvidencias([...evidencias, nuevaEvidencia]);
@@ -61,22 +62,34 @@ function Evidencias({ evidencias, setEvidencias, soloLectura = false }) {
               <span>
                 {e.nombre} {e.principal && <strong>(Principal)</strong>}
               </span>
-              {!soloLectura && (
-                <div className="btn-group">
-                  <button
-                    className="btn btn-outline-primary btn-sm"
-                    onClick={() => marcarPrincipal(e.id)}
+              <div className="btn-group">
+                {e.url && (
+                  <a
+                    href={e.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-outline-secondary btn-sm"
                   >
-                    Marcar principal
-                  </button>
-                  <button
-                    className="btn btn-outline-danger btn-sm"
-                    onClick={() => eliminarEvidencia(e.id)}
-                  >
-                    Eliminar
-                  </button>
-                </div>
-              )}
+                    Ver
+                  </a>
+                )}
+                {!soloLectura && (
+                  <>
+                    <button
+                      className="btn btn-outline-primary btn-sm"
+                      onClick={() => marcarPrincipal(e.id)}
+                    >
+                      Marcar principal
+                    </button>
+                    <button
+                      className="btn btn-outline-danger btn-sm"
+                      onClick={() => eliminarEvidencia(e.id)}
+                    >
+                      Eliminar
+                    </button>
+                  </>
+                )}
+              </div>
             </li>
           ))}
         </ul>
