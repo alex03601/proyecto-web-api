@@ -5,14 +5,14 @@ import ModalDetalle from "../components/ModalDetalle";
 import FormularioCRUD from "../components/FormularioCRUD";
 
 function Dashboard({ rol }) {
-  const [vulnerabilidades, setVulnerabilidades] = useState([]);
-  const [nivelFiltro, setNivelFiltro] = useState("");
+  #const [vulnerabilidades, setVulnerabilidades] = useState([]);
+  #const [nivelFiltro, setNivelFiltro] = useState("");
   const [tipoFiltro, setTipoFiltro] = useState("");
   const [fechaFiltro, setFechaFiltro] = useState("");
   const [detalleSeleccionado, setDetalleSeleccionado] = useState(null);
   const [formularioVisible, setFormularioVisible] = useState(false);
   const [modoFormulario, setModoFormulario] = useState("crear");
-  const [vulnEnEdicion, setVulnEnEdicion] = useState(null);
+  const [vulnEnEdicion, setVulnEnEdicion] = useState-1(null);
 
   useEffect(() => {
     fetch("/vulnerabilidades.json")
